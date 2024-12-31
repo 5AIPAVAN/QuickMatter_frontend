@@ -1,9 +1,19 @@
-.scrollbar::-webkit-scrollbar{
+/* .scrollbar::-webkit-scrollbar{
   width: 10px;
 }
 .scrollbar::-webkit-scrollbar-track{
   @apply bg-slate-100 
 }
 .scrollbar::-webkit-scrollbar-thumb{
-  @apply bg-slate-200 rounded-full
+  @apply bg-gray rounded-full
+} */
+
+
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+*::-webkit-scrollbar {
+  display: none; /* WebKit browsers (Chrome, Safari, Edge) */
 }
