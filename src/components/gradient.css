@@ -1,0 +1,22 @@
+
+
+.yelloww{
+    color: rgb(0, 0, 0);
+    background-color: #fcff17;
+    /* background: rgb(255,249,60);
+background: linear-gradient(0deg, rgba(255,249,60,1) 9%, rgba(244,215,56) 90%); */
+}
+
+.redd{
+    color: white;
+    background: red;
+    /* background: rgb(255,177,60);
+    background: linear-gradient(0deg, rgba(255,177,60,1) 9%, rgba(255,84,34,1) 88%); */
+}
+
+.normall{
+    color: white;
+    background: rgb(35 111 231);
+    /* background: rgb(186,94,228);
+background: radial-gradient(circle, rgba(186,94,228,1) 8%, rgba(148,187,233,1) 100%); */
+}

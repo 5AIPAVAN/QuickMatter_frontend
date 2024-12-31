@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Voice Typing</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+    }
+    textarea {
+      width: 90%;
+      height: 200px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Voice Typing</h1>
+  <textarea id="output" placeholder="Start speaking..."></textarea>
+  <br>
+  <button id="start">Start Listening</button>
+  <button id="stop" style="display: none;">Stop Listening</button>
+
+  <script>
+    // Check if Speech Recognition is available
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      alert("Your browser does not support the Web Speech API.");
+    } else {
+      const recognition = new SpeechRecognition();
+      recognition.continuous = true; // Keeps listening until explicitly stopped
+      recognition.interimResults = true; // Allows showing partial results
+      recognition.lang = "en-US"; // Language setting
+
+      const output = document.getElementById("output");
+      const startButton = document.getElementById("start");
+      const stopButton = document.getElementById("stop");
+
+      // Start listening
+      startButton.addEventListener("click", () => {
+        recognition.start();
+        startButton.style.display = "none";
+        stopButton.style.display = "inline-block";
+      });
+
+      // Stop listening
+      stopButton.addEventListener("click", () => {
+        recognition.stop();
+        startButton.style.display = "inline-block";
+        stopButton.style.display = "none";
+      });
+
+      // Process speech recognition results
+      recognition.onresult = (event) => {
+        let interimTranscript = "";
+        let finalTranscript = "";
+
+        for (let i = 0; i < event.results.length; i++) {
+          const transcript = event.results[i][0].transcript;
+          if (event.results[i].isFinal) {
+            finalTranscript += transcript;
+          } else {
+            interimTranscript += transcript;
+          }
+        }
+
+        output.value = finalTranscript || interimTranscript;
+      };
+
+      recognition.onerror = (event) => {
+        console.error("Speech recognition error:", event.error);
+        recognition.stop();
+        startButton.style.display = "inline-block";
+        stopButton.style.display = "none";
+      };
+    }
+  </script>
+</body>
+</html>
