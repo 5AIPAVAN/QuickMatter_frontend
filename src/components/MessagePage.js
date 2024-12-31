@@ -340,7 +340,7 @@ export default function MessagePage() {
    * @returns {Promise<string>} - A promise that resolves to the translated text.
    */
   async function translateText(text, targetLanguage) {
-    const url = `https://translation.googleapis.com/language/translate/v2?key=${API_KEY}`;
+    const url = `https://translation.googleapis.com/language/translate/v2?key=AIzaSyCf_Knl1wpapXGgdO733G3j8Kj-FiLL54s`;
 
     try {
       const response = await axios.post(url, {
