@@ -330,7 +330,7 @@ export default function MessagePage() {
   // const axios = require('axios');
 
   // Replace this with your Google Cloud API key
-  const API_KEY = 'AIzaSyCf_Knl1wpapXGgdO733G3j8Kj-FiLL54s';
+  const API_KEY = `${process.env.GOOGLEAPI}`;
 
   /**
    * Translates the given text using the Google Translate API.
