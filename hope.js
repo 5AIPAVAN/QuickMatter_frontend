@@ -3,7 +3,7 @@ const { transliterate } = require("transliteration");
 
 // Function to detect language
 async function detectLanguage(inputText) {
-  const apiKey = "AIzaSyCf_Knl1wpapXGgdO733G3j8Kj-FiLL54s"; // Replace with your actual Google API key
+  const apiKey = ""; // Replace with your actual Google API key
   const url = `https://translation.googleapis.com/language/translate/v2/detect`;
 
   try {
