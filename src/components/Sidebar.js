@@ -13,6 +13,7 @@ import { FaImage } from "react-icons/fa6";
 import { FaVideo } from "react-icons/fa6";
 import { logout } from '../redux/userSlice';
 
+
 const Sidebar = () => {
     const user = useSelector(state => state?.user)
     const [editUserOpen,setEditUserOpen] = useState(false)
@@ -116,7 +117,7 @@ const Sidebar = () => {
                     {
                         allUser.map((conv,index)=>{
                             return(
-                                <NavLink to={"/"+conv?.userDetails?._id} key={conv?._id} className='flex items-center gap-2 py-3 px-2 border border-transparent hover:border-primary rounded hover:bg-slate-100 cursor-pointer'>
+                                <NavLink to={"/"+conv?.userDetails?._id} key={conv?._id} className='flex profile_cont items-center gap-2 py-3 px-2 border border-transparent hover:border-primary rounded hover:bg-[rgb(217,255,233)] cursor-pointer'>
                                     <div>
                                         <Avatar
                                             imageUrl={conv?.userDetails?.profile_pic}

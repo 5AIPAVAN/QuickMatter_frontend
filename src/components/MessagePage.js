@@ -422,7 +422,7 @@ export default function MessagePage() {
 
   {/* Dropdown options */}
   <div
-    className={`absolute top-[-10px] right-full flex-row-reverse bg-white border rounded shadow-lg z-100 space-x-2 px-2 py-2 ${
+    className={`absolute top-[4px] right-full flex-row-reverse bg-white border rounded shadow-lg z-100 space-x-2 px-2 py-2 ${
       priorisOpen ? "dropdown-open" : "hidden"
     }`}
     style={{

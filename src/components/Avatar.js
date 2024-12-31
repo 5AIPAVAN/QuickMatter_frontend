@@ -1,6 +1,7 @@
 import React from 'react'
 import { PiUserCircle } from "react-icons/pi";
 import { useSelector } from 'react-redux';
+import './Message.css'
 
 const Avatar = ({userId,name,imageUrl,width,height}) => {
     const onlineUser = useSelector(state => state?.user?.onlineUser)
@@ -35,7 +36,7 @@ const Avatar = ({userId,name,imageUrl,width,height}) => {
 
     const isOnline = onlineUser.includes(userId)
   return (
-    <div className={`text-slate-800  rounded-full font-bold relative`} style={{width : width+"px", height : height+"px" }}>
+    <div className={`text-slate-800  rounded-full font-bold relative `} style={{width : width+"px", height : height+"px" }}>
         {
             imageUrl ? (
                 <img
@@ -43,7 +44,7 @@ const Avatar = ({userId,name,imageUrl,width,height}) => {
                     width={width}
                     height={height}
                     alt={name}
-                    className='overflow-hidden rounded-full'
+                    className=' height-inherit object-cover overflow-hidden rounded-full'
                 />
             ) : (
                 name ? (
