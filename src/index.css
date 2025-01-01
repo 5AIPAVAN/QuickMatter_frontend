@@ -2,6 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Salsa&family=Solitreo&family=Space+Grotesk:wght@300..700&display=swap');
+
+/* .space-grotesk-logoo {
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 40px;
+  color: #22c55e;
+} */
+
+.space-grotesk-logoo {
+  font-family: "Space Grotesk", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 40px;
+  color: #22c55e;
+}
+
+.space-grotesk-logoo span {
+  display: inline-block;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: jump 2.0s ease forwards;
+  animation-iteration-count: infinite; /* Makes the animation loop */
+  animation-delay: var(--delay); /* Dynamic delay for each character */
+}
+
+@keyframes jump {
+  0% {
+    transform: translateY(20px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20px);
+    opacity: 0.5;
+  }
+}
+
 
 body {
   margin: 0;

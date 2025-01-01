@@ -28,7 +28,6 @@ const CheckEmailPage = () => {
     e.stopPropagation()
 
     const URL = `${process.env.REACT_APP_BACKEND_URL}/api/email`
-    console.log("check here",process.env.REACT_APP_BACKEND_URL);
 
     try {
         const response = await axios.post(URL,data)
@@ -71,7 +70,7 @@ const CheckEmailPage = () => {
                   id='email'
                   name='email'
                   placeholder='enter your email' 
-                  className='bg-slate-100 px-2 py-1 focus:outline-primary'
+                  className='bg-slate-100 px-2 py-1 focus:outline-[#22c55e]'
                   value={data.email}
                   onChange={handleOnChange}
                   required
@@ -79,14 +78,14 @@ const CheckEmailPage = () => {
               </div>
 
               <button
-               className='bg-primary text-lg  px-4 py-1 hover:bg-secondary rounded mt-2 font-bold text-white leading-relaxed tracking-wide'
+               className='bg-[#22c55e] text-lg  px-4 py-1 hover:bg-[#11ed62] rounded mt-2 font-bold text-white leading-relaxed tracking-wide'
               >
                 Let's Go
               </button>
 
           </form>
 
-          <p className='my-3 text-center'>New User ? <Link to={"/register"} className='hover:text-primary font-semibold'>Register</Link></p>
+          <p className='my-3 text-center'>New User ? <Link to={"/register"} className='hover:text-[#11ed62] font-semibold'>Register</Link></p>
         </div>
     </div>
   )

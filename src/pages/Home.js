@@ -6,6 +6,7 @@ import { logout, setOnlineUser, setSocketConnection, setUser } from '../redux/us
 import Sidebar from '../components/Sidebar'
 import logo from '../assets/logo.png'
 import io from 'socket.io-client'
+import TypingAnimation from '../components/TypingAnimation'
 
 const Home = () => {
   const user = useSelector(state => state.user)
@@ -74,11 +75,8 @@ const Home = () => {
 
         <div className={`justify-center items-center flex-col gap-2 hidden ${!basePath ? "hidden" : "lg:flex" }`}>
             <div>
-              <img
-                src={logo}
-                width={250}
-                alt='logo'
-              />
+              <TypingAnimation text={"Chatting ...."}/>
+            {/* <h1 className='space-grotesk-logoo'>Welcome   to   QuickMatter ...</h1> */}
             </div>
             <p className='text-lg mt-2 text-slate-500'>Select user to send message</p>
         </div>

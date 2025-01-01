@@ -96,7 +96,7 @@ const CheckPasswordPage = () => {
                   id='password'
                   name='password'
                   placeholder='enter your password' 
-                  className='bg-slate-100 px-2 py-1 focus:outline-primary'
+                  className='bg-slate-100 px-2 py-1 focus:outline-[#22c55e]'
                   value={data.password}
                   onChange={handleOnChange}
                   required
@@ -104,14 +104,14 @@ const CheckPasswordPage = () => {
               </div>
 
               <button
-               className='bg-primary text-lg  px-4 py-1 hover:bg-secondary rounded mt-2 font-bold text-white leading-relaxed tracking-wide'
+               className='bg-[#22c55e] text-lg  px-4 py-1 hover:bg-[#11ed62] rounded mt-2 font-bold text-white leading-relaxed tracking-wide'
               >
                 Login
               </button>
 
           </form>
 
-          <p className='my-3 text-center'><Link to={"/forgot-password"} className='hover:text-primary font-semibold'>Forgot password ?</Link></p>
+          <p className='my-3 text-center'><Link to={"/forgot-password"} className='hover:text-[#11ed62] font-semibold'>Forgot password ?</Link></p>
         </div>
     </div>
   )
