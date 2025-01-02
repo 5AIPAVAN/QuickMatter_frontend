@@ -5,11 +5,14 @@ import uploadFile from '../helpers/uploadFile';
 import axios from 'axios'
 import toast from 'react-hot-toast';
 import { PiUserCircle } from "react-icons/pi";
+import TypingAnimation from '../components/TypingAnimation';
 
 const CheckEmailPage = () => {
+  
   const [data,setData] = useState({
     email : "",
   })
+  const fullText='WELCOME';
   const navigate = useNavigate()
 
   const handleOnChange = (e)=>{
@@ -53,12 +56,19 @@ const CheckEmailPage = () => {
         <div className='bg-white w-full max-w-md  rounded overflow-hidden p-4 mx-auto'>
 
             <div className='w-fit mx-auto mb-2'>
-                <PiUserCircle
-                  size={80}
-                />
+               <img src='./dp_img.png' width='100' height='100'/>
             </div>
 
-          <h3>Welcome to Chat app!</h3>
+<div className='flex justify-center text-xs'>
+<h1 className="space-grotesk-logoo2">
+      {fullText.split("").map((char, index) => (
+        <span key={index} style={{ animationDelay: `${index * 0.1}s` }}>
+          {char}
+        </span>
+      ))}
+    </h1>
+   
+            </div>
 
           <form className='grid gap-4 mt-3' onSubmit={handleSubmit}>
               
@@ -70,7 +80,7 @@ const CheckEmailPage = () => {
                   id='email'
                   name='email'
                   placeholder='enter your email' 
-                  className='bg-slate-100 px-2 py-1 focus:outline-[#22c55e]'
+                  className='bg-slate-100 h-10 px-2 py-1 focus:outline-[#22c55e]'
                   value={data.email}
                   onChange={handleOnChange}
                   required
